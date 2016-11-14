@@ -1,31 +1,20 @@
-package de.sitefusion.api.services.bundimport.contacts.workflowtasks;
+package my.tests;
 
 import org.camunda.spin.Spin;
 import org.camunda.spin.xml.SpinXPathException;
 import org.camunda.spin.xml.SpinXmlElement;
 
 /**
- * Test, um zu zeigen, wie doof Spin ist.
+ * Test, to show a potential bug in Spin.
  */
-public final  class Test {
-
-    /**
-     * Test.
-     */
-    private Test() {
-        // Leer
-    }
+public class Test {
 
     /**
      * Test.
      * @param args argumente
      */
-    @SuppressWarnings("squid:S106")
     public static void main(final String[] args) {
         final SpinXmlElement root = Spin.XML("<root xmlns=\"test\"><sub></sub></root>");
-
-
-
         System.out.println("<sub> is automatically in the same namespace like <root>");
         final SpinXmlElement funzt1 = root.xPath("./ns:sub").ns("ns", "test").element();
         System.out.println(funzt1.toString());
